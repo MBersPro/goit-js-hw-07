@@ -1,7 +1,11 @@
-const counterValue = document.querySelector('#value')
-const decrementBtn = document.querySelector('#decrementBtn')
-const incrementBtn = document.querySelector('#incrementBtn')
-const incrementFunc = () => counterValue.textContent =+ counterValue.textContent + 1
-incrementBtn.addEventListener('click', incrementFunc)
-const decrementFunc = () => counterValue.textContent =+ counterValue.textContent - 1
-decrementBtn.addEventListener('click', decrementFunc)
+const decrementBtnNode = document.querySelector("#decrementBtn");
+const incrementBtnNode = document.querySelector("#incrementBtn");
+const valueNode = document.querySelector("#value")
+
+let valueNumber = Number(valueNode.textContent)
+
+const decrementFunc = () => valueNode.textContent = valueNumber -= 1;
+const incrementFunc = () => valueNode.textContent = valueNumber += 1;
+
+decrementBtnNode.addEventListener("click", decrementFunc);
+incrementBtnNode.addEventListener("click", incrementFunc);

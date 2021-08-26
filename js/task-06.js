@@ -1,12 +1,12 @@
-const inputClass = document.querySelector("#validation-input")
-const dataLengthClass = inputClass.getAttribute("data-length")
-const check = (event) => {
-    if(event.currentTarget.value.length === 6) {
-        inputClass.classList.add("valid")
-        inputClass.classList.remove("invalid")
+const validationInputNode = document.querySelector("#validation-input");
+const dataLengthValue = validationInputNode.dataset.length
+
+validationInputNode.addEventListener("input", () =>{
+    if(validationInputNode.value.length === Number(dataLengthValue)){
+        validationInputNode.classList.add("valid")
+        validationInputNode.classList.remove("invalid")
     }else{
-        inputClass.classList.add("invalid")
-        inputClass.classList.remove("valid")
+        validationInputNode.classList.remove("valid")
+        validationInputNode.classList.add("invalid")
     }
-}
-inputClass.addEventListener("blur", check)  
+})
